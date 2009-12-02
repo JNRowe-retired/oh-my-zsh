@@ -3,6 +3,7 @@ if ! is-at-least 4.3.6; then
     echo -e "\007[Warning: jnrowe theme requires at least v4.3.6 of zsh to" \
         "function correctly!!]"
     sleep 3
+    return 1
 fi
 
 autoload -U add-zsh-hook

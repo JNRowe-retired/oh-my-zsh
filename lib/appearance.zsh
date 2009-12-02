@@ -35,4 +35,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""               # Text to display if the branch is c
 setopt prompt_subst
 
 # Load the theme
-source "$ZSH/themes/$ZSH_THEME.zsh-theme"
+if ! source "$ZSH/themes/$ZSH_THEME.zsh-theme"; then
+    echo "[Reverting to robbyrussell theme]"
+    source "$ZSH/themes/robbyrussell.zsh-theme"
+fi

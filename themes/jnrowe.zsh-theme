@@ -14,7 +14,7 @@ zstyle ':vcs_info:*' actionformats \
 zstyle ':vcs_info:*' formats \
     '%F{2}%s%F{7}:%F{2}(%F{1}%b%F{2})%f '
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
-zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' enable git hg
 
 add-zsh-hook precmd prompt_jnrowe_precmd
 

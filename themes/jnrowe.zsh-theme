@@ -23,11 +23,11 @@ add-zsh-hook precmd prompt_jnrowe_precmd
 prompt_jnrowe_precmd () {
     vcs_info
 
-    if [ "${vcs_info_msg_0_}" = "" ]; then
+    if [ -z "${vcs_info_msg_0_}" ]; then
         _jnrowe_dir_status="%F{2}→%f"
-    elif [[ $(git diff --cached --name-status 2>/dev/null ) != "" ]]; then
+    elif ! git diff-index --cached --quiet --ignore-submodules HEAD 2>/dev/null; then
         _jnrowe_dir_status="%F{1}▶%f"
-    elif [[ $(git diff --name-status 2>/dev/null ) != "" ]]; then
+    elif ! git diff --no-ext-diff --ignore-submodules --quiet 2>/dev/null; then
         _jnrowe_dir_status="%F{3}▶%f"
     else
         _jnrowe_dir_status="%F{2}▶%f"

@@ -17,6 +17,9 @@ zstyle ':vcs_info:*' enable git hg
 
 add-zsh-hook precmd prompt_jnrowe_precmd
 
+# As useful as the check-for-changes functionality in vcs_info is, it does make
+# it difficult to have a single value display for repository status.  This is
+# the stupidly lazy way of working around that.
 prompt_jnrowe_precmd () {
     vcs_info
 

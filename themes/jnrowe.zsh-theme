@@ -24,16 +24,16 @@ prompt_jnrowe_precmd () {
     vcs_info
 
     if [ "${vcs_info_msg_0_}" = "" ]; then
-        dir_status="%F{2}→%f"
+        _jnrowe_dir_status="%F{2}→%f"
     elif [[ $(git diff --cached --name-status 2>/dev/null ) != "" ]]; then
-        dir_status="%F{1}▶%f"
+        _jnrowe_dir_status="%F{1}▶%f"
     elif [[ $(git diff --name-status 2>/dev/null ) != "" ]]; then
-        dir_status="%F{3}▶%f"
+        _jnrowe_dir_status="%F{3}▶%f"
     else
-        dir_status="%F{2}▶%f"
+        _jnrowe_dir_status="%F{2}▶%f"
     fi
 }
 
-local ret_status="%(?:%{$fg_bold[green]%}Ξ:%{$fg_bold[red]%}%S↑%s%?)"
+local _jnrowe_ret_status="%(?:%{$fg_bold[green]%}Ξ:%{$fg_bold[red]%}%S↑%s%?)"
 
-PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg_bold[yellow]%}%2~ ${vcs_info_msg_0_}${dir_status}%{$reset_color%} '
+PROMPT='${_jnrowe_ret_status}%{$fg_bold[green]%}%p %{$fg_bold[yellow]%}%2~ ${vcs_info_msg_0_}${_jnrowe_dir_status}%{$reset_color%} '

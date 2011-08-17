@@ -20,7 +20,7 @@ dirpersistinstall () {
 }
 
 dirpersiststore () {
-    dirs -p | perl -e 'foreach (reverse <STDIN>) {chomp;s/([& ])/\\$1/g ;print "if [ -d $_ ]; then pushd -q $_; fi\n"}' > $zdirstore
+    dirs -p | perl -e 'foreach (reverse <STDIN>) {chomp;s/([& ])/\\$1/g ;print "if [ -d $_ ]; then pushd -q $_; fi\n"}' >| $zdirstore
 }
 
 dirpersistrestore () {

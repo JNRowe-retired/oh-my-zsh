@@ -6,10 +6,10 @@
 # 
 
 # $zdirstore is the file used to persist the stack
-zdirstore=~/.zdirstore
+zdirstore=~/.zsh/dirstore
 
 dirpersistinstall () {
-    if grep 'dirpersiststore' ~/.zlogout > /dev/null; then
+    if grep 'dirpersiststore' ~/.zsh/.zlogout > /dev/null; then
     else
         if read -q \?"Would you like to set up your .zlogout file for use with dirspersist? (y/n) "; then
             echo "# Store dirs stack\n# See ~/.oh-my-zsh/plugins/dirspersist.plugin.zsh\ndirpersiststore" >> ~/.zlogout

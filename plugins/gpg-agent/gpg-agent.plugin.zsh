@@ -1,6 +1,6 @@
 # Based on ssh-agent code
 
-local GPG_ENV=$HOME/.gnupg/gpg-agent.env
+local GPG_ENV=$HOME/.gnupg/environment
 
 function start_agent {
   /usr/bin/env gpg-agent --daemon --enable-ssh-support --write-env-file ${GPG_ENV} > /dev/null
